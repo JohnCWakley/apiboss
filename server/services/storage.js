@@ -28,8 +28,8 @@ module.exports = app => {
 			return (file.indexOf('.') !== 0)
 		})
 		.forEach(file => {
-			var model = sequelize.import(path.join(__dirname, '..', 'models', file))
-			db[model.name] = model
+			var model = require(path.join(__dirname, '..', 'models', file))(sequelize, Sequelize.DataTypes);
+            db[model.name] = model;
 		})
 
 	Object.keys(db).forEach(modelName => {
