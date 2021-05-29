@@ -25,7 +25,7 @@ exports.seed = function (knex) {
                 city: 'CITY',
                 state: 'STATE',
                 postalCode: 'POSTAL_CODE',
-                apiRoute: 'admin',
+                route: 'admin',
                 ...encrypt('admin')
             });
         });

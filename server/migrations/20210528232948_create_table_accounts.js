@@ -19,7 +19,7 @@ exports.up = function (knex) {
         table.string('city').notNullable();
         table.string('state').notNullable();
         table.string('postalCode').notNullable();
-        table.string('apiRoute').unique().notNullable();
+        table.string('route').unique().notNullable();
         table.uuid('resetToken');
         table.bigInteger('resetTokenExpires');
     });
