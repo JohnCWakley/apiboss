@@ -6,7 +6,7 @@ exports.up = function (knex) {
         table.timestamps(false, true);
         table.integer('apiId').references('apis.id');
         table.string('name').notNullable();
-        table.integer('responseType').defaultTo(Constants.METHOD_RESPONSE_TYPE.RAW_TEXT);
+        table.integer('responseType').defaultTo(Constants.METHOD_RESPONSE_TYPE.JSON);
         table.text('response');
         table.text('postData');
     });
