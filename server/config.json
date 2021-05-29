@@ -1,0 +1,32 @@
+{
+    "name": "mmo.knuckleheadgames.com",
+    "host": "0.0.0.0",
+    "port": 3000,
+    "token_key": "the_friggin_key",
+    "email": {
+        "host": "localhost",
+        "port": 25,
+        "secure": false,
+        "auth": {
+            "user": null,
+            "pass": null
+        },
+        "tls": {
+            "rejectUnauthorized": false
+        }
+    },
+    "static_paths": [
+        {
+            "route": "/",
+            "path": "./public"
+        },
+        {
+            "route": "/play",
+            "path": "../client/dist"
+        },
+        {
+            "route": "/admin",
+            "path": "../admin/dist"
+        }
+    ]
+}
