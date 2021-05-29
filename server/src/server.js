@@ -4,6 +4,7 @@ const { resolve } = require('path');
 const nodemailer = require('nodemailer');
 const Knex = require('knex');
 const Logger = require('./utils/logger.js');
+const ApiHandler = require('./api-handler.js');
 const LiveHandler = require('./live-handler.js');
 
 module.exports = async function StartServer(config) {
@@ -59,6 +60,7 @@ module.exports = async function StartServer(config) {
         app.use(static_path.route, express.static(resolve(process.cwd(), static_path.path)));
     });
 
+    app.use('/api', ApiHandler(db));
     app.use('/live', LiveHandler(db));
 
     const server = createServer(app);
